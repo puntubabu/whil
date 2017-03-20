@@ -32,12 +32,12 @@ const Post = ({
   }
 
   if (url.match(/(jpg|png|jpeg|gif|gifv)/)) {
-    let newURL;
-    if (url.includes('gifv')) {
-      newURL = url.substring(0, url.length - 1);
+    let newURL = url;
+    if (!url.includes('https')) {
+      newURL = url.replace('http', 'https');
     }
-    if (!newURL.includes('https')) {
-      newURL = newURL.replace('http', 'https');
+    if (url.includes('gifv')) {
+      newURL = newURL.substring(0, newURL.length - 1);
     }
     image = <Image
               style={{ width: 250, height: 250 }}
