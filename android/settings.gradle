@@ -1,0 +1,3 @@
+rootProject.name = 'whil_challenge'
+
+include ':app'
